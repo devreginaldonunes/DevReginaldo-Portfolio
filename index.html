@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Reginaldo</title>
+    <link rel="icon" href="./src/img/favicon.ico" sizes="32x32">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('./src/Styles/styles.css');
+    </style>
+</head>
+
+<body>
+    <div id="preloader" class="preloader">
+        <div class="preloader-logo" aria-label="REGINALDODEV">
+            <span>R</span><span>E</span><span>G</span><span>I</span><span>N</span><span>A</span><span>L</span><span>D</span><span>O</span>
+            <span>DEV</span>
+        </div>
+    </div>
+
+    <!-- Container para as notificações -->
+    <div id="toast-container"></div>
+
+
+    <div class="cursor"></div>
+    <header>
+        <div class="container">
+            <div class="logo">REGINALDO<span>DEV</span></div>
+            <div class="theme-switch">
+                <div class="switch-track">
+                    <div class="switch-thumb">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#inicio" class="active">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projetos">Projetos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="menu-mobile">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Olá, eu sou <span class="highlight">Reginaldo Nunes</span></h1>
+                <h2 class="typewriter">Desenvolvedor <span class="typing"></span></h2>
+                <p>
+                    Crio interfaces modernas, responsivas e funcionais.<br>
+                    Meu foco é transformar ideias em soluções digitais inovadoras.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#projetos" class="btn primary">Meus Projetos</a>
+                    <a href="#contato" class="btn secondary">Fale Comigo</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="shape"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-container">
+                        <div class="glow"></div>
+                        <img src="./src/img/Perfil.png" alt="Reginaldo Nunes" class="profile-image">
+                    </div>
+
+                    <div class="download-container">
+                        <button id="downloadBtn" class="download-btn">
+                            <span class="btn-text">
+                                <i class="fas fa-download"></i>
+                                <span>Download - CV</span>
+                            </span>
+                            <span class="download-icon">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                            <div class="download-progress"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Sou um desenvolvedor front-end apaixonado por tecnologia, com foco em criar experiências
+                        digitais únicas.
+                        Tenho experiência com <strong>HTML5, CSS3, JavaScript e React</strong>, além de boas práticas de
+                        <strong>UI/UX Design</strong>.
+                    </p>
+                    <p>
+                        Meu objetivo é atuar em projetos que unam design e funcionalidade, oferecendo soluções modernas
+                        e acessíveis
+                        para usuários.
+                    </p>
+
+                    <div class="skills">
+                        <h3>Habilidades</h3>
+                        <div class="skill-bars">
+                            <div class="skill">
+                                <span>HTML/CSS</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-value="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>JavaScript</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-value="60"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>React</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-value="40"></div>
+                                </div>
+                            </div>
+                            <div class="skill">
+                                <span>UI/UX Design</span>
+                                <div class="progress-bar">
+                                    <div class="progress" data-value="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos" class="projects">
+        <div class="container">
+            <h2 class="section-title">Meus Projetos</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">App</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide active" data-category="web">
+                        <div class="project-card">
+                            <div class="project-layout">
+                                <div class="project-image">
+                                    <img src="./src/img/Clima.png" alt="ClimaTempo">
+                                    <div class="overlay">
+                                        <div class="project-links">
+                                            <a href="https://devweatherpro.netlify.app/" class="project-link">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                            <a href="https://github.com/devreginaldonunes/DevReginaaldo-WeatherPro"
+                                                class="project-link">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>WeatherPro</h3>
+                                    <p>Aplicativo web de previsão do tempo com interface moderna, busca por cidade,
+                                        geolocalização e previsão de 5 dias, oferecendo uma experiência visual e
+                                        funcional otimizada.</p>
+                                    <div class="project-tags">
+                                        <span>HTML5</span>
+                                        <span>CSS3</span>
+                                        <span>JavaScript</span>
+                                        <span>API</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide" data-category="web">
+                        <div class="project-card">
+                            <div class="project-layout">
+                                <div class="project-image">
+                                    <img src="./src/img/Financeiro.png" alt="Controle Financeiro">
+                                    <div class="overlay">
+                                        <div class="project-links">
+                                            <a href="https://devexpensetracker.netlify.app/" class="project-link">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                            <a href="https://github.com/devreginaldonunes/DevReginaldo-ExpenseTracker"
+                                                class="project-link">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Expense Tracker</h3>
+                                    <p>Sistema completo para gestão de finanças pessoais com categorização de gastos,
+                                        relatórios e gráficos interativos para análise financeira.</p>
+                                    <div class="project-tags">
+                                        <span>HTML5</span>
+                                        <span>CSS3</span>
+                                        <span>JavaScript</span>
+                                        <span>LocalStorage</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide" data-category="web">
+                        <div class="project-card">
+                            <div class="project-layout">
+                                <div class="project-image">
+                                    <img src="./src/img/Economia.PNG" alt="Economia">
+                                    <div class="overlay">
+                                        <div class="project-links">
+                                            <a href="https://deveconomia.netlify.app/" class="project-link">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                            <a href="https://devreginaldonunes.github.io/DevReginaldo-Economia-Progressiva/"
+                                                class="project-link">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Economia Progressiva</h3>
+                                    <p>Aplicativo de metas financeiras para ajudar você a economizar de forma
+                                        inteligente.
+                                        Defina objetivos mensais ou anuais e acompanhe seu progresso com clareza.
+                                        Transforme pequenas economias em grandes realizações.</p>
+                                    <div class="project-tags">
+                                        <span>HTML5</span>
+                                        <span>CSS3</span>
+                                        <span>JavaScript</span>
+                                        <span>UI/UX</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide" data-category="web">
+                        <div class="project-card">
+                            <div class="project-layout">
+                                <div class="project-image">
+                                    <img src="./src/img/Task.png" alt="Task Master">
+                                    <div class="overlay">
+                                        <div class="project-links">
+                                            <a href="https://devtaskmaster.netlify.app/"
+                                                class="project-link">
+                                                <i class="fas fa-link"></i>
+                                            </a>
+                                            <a href="https://github.com/devreginaldonunes/DevReginaldo-TaskMaster"
+                                                class="project-link">
+                                                <i class="fab fa-github"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="project-info">
+                                    <h3>Task Master</h3>
+                                    <p>um gerenciador de tarefas simples e intuitivo.
+                                        Monitora tarefas com contadores para: total, pendentes, concluídas e progresso
+                                        em porcentagem.
+                                        Permite criar e editar tarefas com campos como título, descrição, prioridade
+                                        (baixa/média/alta), categoria e data de vencimento.</p>
+                                    <div class="project-tags">
+                                        <span>HTML5</span>
+                                        <span>CSS3</span>
+                                        <span>JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav">
+                <button class="carousel-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <span class="carousel-dot active" data-slide="0"></span>
+                    <span class="carousel-dot" data-slide="1"></span>
+                    <span class="carousel-dot" data-slide="2"></span>
+                    <span class="carousel-dot" data-slide="3"></span>
+                </div>
+
+                <button class="carousel-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+            </div>
+
+            <div class="carousel-counter">
+                <span id="currentSlide">1</span> / <span id="totalSlides">4</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p style="text-align:center; margin-bottom:20px; color: var(--dark-text-muted)">
+                Vamos trabalhar juntos? Me envie uma mensagem ou conecte-se comigo nas redes.</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>Dev.reginaldonunes@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>+55 (85) 92149-8527</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Localização</h3>
+                            <p>Fortaleza-CE, Brasil</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/reginaldo-nunes-03113b285/" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/RegisDev2k" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/regiis_n/" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Nome</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Assunto</label>
+                            <div class="line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Mensagem</label>
+                            <div class="line"></div>
+                        </div>
+                        <button type="submit" class="btn primary">Enviar Mensagem</button>
+                        <p id="form-status" style="margin-top:10px; color: var(--dark-text-muted)"></p>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">REGINALDO<span>DEV</span></div>
+                <p>&copy; 2025 Reginaldo Nunes - Todos os direitos reservados</p>
+            </div>
+            <a href="#inicio" class="back-to-top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="./src/Js/script.js"></script>
+</body>
+
+</html>
