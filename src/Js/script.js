@@ -325,6 +325,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(startAutoSlide, 10000);
             });
         });
+    // Clique em slides para navegar diretamente
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', () => {
+            goToSlide(index);
+            stopAutoSlide();
+            setTimeout(startAutoSlide, 10000);
+        });
+    });
 
 
     // Project filtering
@@ -346,9 +354,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     carouselTrack.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
+        currentX = startX;   // <- linha essencial
         isDragging = true;
         stopAutoSlide();
     });
+
 
     carouselTrack.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
@@ -366,22 +376,34 @@ document.addEventListener('DOMContentLoaded', function () {
         isDragging = false;
 
         const diffX = startX - currentX;
-        const threshold = window.innerWidth * 0.2; // 20% of screen width
+        const threshold = window.innerWidth * 0.2; // 20% da largura da tela
+        const tapThreshold = 10; // px → limite para diferenciar toque de arraste
 
-        if (Math.abs(diffX) > threshold) {
+        if (Math.abs(diffX) < tapThreshold) {
+            // 👉 Toque simples (clique no slide)
+            const touchedSlide = e.target.closest('.carousel-slide');
+            if (touchedSlide) {
+                const index = filteredSlides.indexOf(touchedSlide);
+                if (index !== -1) {
+                    goToSlide(index);
+                }
+            }
+        } else if (Math.abs(diffX) > threshold) {
+            // 👉 Swipe
             if (diffX > 0 && currentSlideIndex < filteredSlides.length - 1) {
                 nextSlide();
             } else if (diffX < 0 && currentSlideIndex > 0) {
                 prevSlide();
             } else {
-                updateCarousel(); // Reset position
+                updateCarousel(); // Reset posição
             }
         } else {
-            updateCarousel(); // Reset position
+            updateCarousel(); // Reset posição
         }
 
         setTimeout(startAutoSlide, 5000);
     });
+
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {

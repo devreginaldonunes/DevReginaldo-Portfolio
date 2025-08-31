@@ -900,7 +900,7 @@ header .container {
     will-change: transform;
 }
 
-/* Slide sempre centralizado */
+/* Slide */
 .carousel-slide {
     min-width: 100%;
     display: flex;
@@ -908,26 +908,21 @@ header .container {
     align-items: center;
 }
 
-/* Cartão do projeto */
+
+/* Cartão */
 .project-card {
     background-color: var(--dark-surface);
     border-radius: 20px;
     overflow: hidden;
-    transition: var(--transition);
     max-width: 900px;
     width: 100%;
     position: relative;
     margin: 0 auto;
-
-    /* Centraliza melhor */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    /* Remove opacidade baixa que desalinhava */
-    transform: scale(1);
-    opacity: 1;
+    transition: var(--transition);
 }
 
 .light-theme .project-card {
@@ -943,10 +938,11 @@ header .container {
     background-color: var(--light-surface);
 }
 
-.project-card:hover {
-    transform: scale(1.02) !important;
-}
 
+/* Hover leve */
+.project-card:hover {
+    transform: translateY(-5px);
+}
 .project-layout {
     align-items: center;
     display: grid;
@@ -968,16 +964,17 @@ header .container {
 }
 
 
+/* Imagem */
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
-    transition: var(--transition);
+    transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .overlay {
@@ -1007,21 +1004,15 @@ header .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(10px);
-    transform: translateY(0);
-    transition: transform 0.4s ease, background 0.5s ease;
     font-size: 1.2rem;
-
-    /* Gradient padrão (modo escuro) */
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     color: var(--dark-bg);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hover com efeito de animação leve */
 .project-link:hover {
     transform: translateY(-3px) scale(1.1);
-    color: var(--light-bg);
-
+    opacity: 0.9;
 }
 
 
